@@ -13,7 +13,7 @@ const client = new TwitterApi({
 const rwClient = client.readWrite;
 async function postTweet() {
     try {
-        
+
         // Fetch a random dog image
         const response = await fetch("https://dog.ceo/api/breeds/image/random");
         const data = await response.json();
@@ -28,7 +28,7 @@ async function postTweet() {
 
         // Post the tweet with the image
         const tweet = await rwClient.v2.tweet({
-            text: "Random dog picture! 🐶",
+            text: "Random dog pic of the day!",
             media: { media_ids: [mediaId] }
         });
 
