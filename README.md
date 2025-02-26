@@ -1,6 +1,6 @@
 # Twitter Bot Dog Pics
 
-A twitter bot that sends a dog pic everyday
+A twitter bot that sends a random dog pic everyday
 
 # What I learned
 
