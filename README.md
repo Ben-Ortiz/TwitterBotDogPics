@@ -1,4 +1,4 @@
-# Twitter Bot
+# Twitter Bot Dog Pics
 
 A twitter bot that sends a dog pic everyday
 
