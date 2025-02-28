@@ -1,0 +1,26 @@
+name: Twitter Bot Dog Pics
+
+on:
+  schedule:
+    - cron: "0 17 * * *" # Runs daily at 9 AM UTC
+  workflow_dispatch: # Allows manual runs
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Run bot
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }} # had to change this to API_KEY_SECRET from API_SECRET
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }} # had to change this to ACCESS_TOKEN_SECRET from ACCESS_SECRET
+        run: node bot.js
