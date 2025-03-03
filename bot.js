@@ -14,6 +14,14 @@ const rwClient = client.readWrite;
 async function postTweet() {
     try {
 
+        // formatted date
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('en-US', {
+            month: '2-digit',
+            day: '2-digit',
+            year: 'numeric'
+        });
+
         // Fetch a random dog image
         const response = await fetch("https://dog.ceo/api/breeds/image/random");
         const data = await response.json();
@@ -28,7 +36,7 @@ async function postTweet() {
 
         // Post the tweet with the image
         const tweet = await rwClient.v2.tweet({
-            text: "Random dog pic of the day!",
+            text: "Random dog pic of the day! " + formattedDate,
             media: { media_ids: [mediaId] }
         });
 
