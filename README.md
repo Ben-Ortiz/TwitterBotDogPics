@@ -1,4 +1,4 @@
-# Twitter Bot Dog Pics [Click here to see the Live Twitter Bot](https://x.com/DogPics_Daily)
+# Twitter Bot Dog Pics [](https://x.com/DogPics_Daily)
 
 A twitter bot that sends a random dog pic everyday at 12pm EST
 
